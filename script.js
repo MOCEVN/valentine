@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     noButton.style.display = "none";
 
     question.textContent = "YUUUUURRRRR";
-    response.textContent = "LY ❤️";
+    response.textContent = "TE AMO ❤️";
     response.classList.remove("hidden");
 
     createHearts();
