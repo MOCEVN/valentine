@@ -256,15 +256,15 @@ body {
   }
 
   .lego-roses {
-    width: 220px;
-    bottom: -50px;
-    left: -50px;
+    width: 300px;
+    bottom: -60px;
+    left: -60px;
   }
 
   .lego-roses-pink {
-    width: 180px;
-    bottom: -40px;
-    right: -50px;
+    width: 250px;
+    bottom: -50px;
+    right: -60px;
   }
 }
 
@@ -284,14 +284,14 @@ body {
   }
 
   .lego-roses {
-    width: 160px;
-    bottom: -35px;
-    left: -35px;
+    width: 250px;
+    bottom: -45px;
+    left: -45px;
   }
 
   .lego-roses-pink {
-    width: 140px;
-    bottom: -25px;
-    right: -35px;
+    width: 200px;
+    bottom: -35px;
+    right: -45px;
   }
 }
