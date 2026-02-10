@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     yesButton.style.display = "none";
     noButton.style.display = "none";
 
-    question.textContent = "Yay! 🎉";
-    response.textContent = "I knew you'd say yes! ❤️";
+    question.textContent = "YUUUUURRRRR";
+    response.textContent = "LY ❤️";
     response.classList.remove("hidden");
 
     createHearts();
@@ -22,34 +22,67 @@ document.addEventListener("DOMContentLoaded", () => {
   noButton.addEventListener("click", () => {
     noClickCount++;
 
+    // Check if mobile/tablet
+    const isMobile = window.innerWidth <= 768;
+    const isSmallMobile = window.innerWidth <= 480;
+
     if (noClickCount === 1) {
-      question.textContent = "Are you sure about that? 🤨";
-      yesButton.style.padding = "2.5rem 4rem";
-      yesButton.style.fontSize = "1.8rem";
+      question.textContent = "Really? Think carefully... 🤔";
+      noButton.textContent = "Still no";
+      if (!isMobile) {
+        yesButton.style.padding = "1.8rem 4.5rem";
+        yesButton.style.fontSize = "1.8rem";
+      }
     } else if (noClickCount === 2) {
-      question.textContent = "Think again... 🤔";
-      yesButton.style.padding = "3rem 5rem";
-      yesButton.style.fontSize = "2.2rem";
-      noButton.style.padding = "1.5rem 2rem";
-      noButton.style.fontSize = "1.2rem";
+      question.textContent = "Hmm, that's suspicious 👀, DEADASS???";
+      noButton.textContent = "Nope";
+      if (!isMobile) {
+        yesButton.style.padding = "2.2rem 5.5rem";
+        yesButton.style.fontSize = "2.2rem";
+        noButton.style.padding = "1.2rem 2.5rem";
+        noButton.style.fontSize = "1.2rem";
+      } else if (!isSmallMobile) {
+        noButton.style.padding = "1rem 2rem";
+        noButton.style.fontSize = "1rem";
+      }
     } else if (noClickCount === 3) {
-      question.textContent = "Wrong answer. Try again. 😏";
-      yesButton.style.padding = "3.5rem 6rem";
-      yesButton.style.fontSize = "2.5rem";
-      noButton.style.padding = "1rem 1.5rem";
-      noButton.style.fontSize = "1rem";
+      question.textContent = "Okay this is getting awkward... 🥷🏾";
+      noButton.textContent = "Still nope";
+      if (!isMobile) {
+        yesButton.style.padding = "2.8rem 6.5rem";
+        yesButton.style.fontSize = "2.6rem";
+        noButton.style.padding = "0.8rem 1.8rem";
+        noButton.style.fontSize = "0.9rem";
+      } else if (!isSmallMobile) {
+        noButton.style.padding = "0.8rem 1.5rem";
+        noButton.style.fontSize = "0.85rem";
+      } else {
+        noButton.style.padding = "0.7rem 1rem";
+        noButton.style.fontSize = "0.75rem";
+      }
     } else if (noClickCount === 4) {
-      question.textContent = "The Yes button is right there... 👉";
-      yesButton.style.padding = "4rem 7rem";
-      yesButton.style.fontSize = "3rem";
-      noButton.style.padding = "0.5rem 1rem";
-      noButton.style.fontSize = "0.8rem";
+      question.textContent = "I don't think you understand how this works";
+      noButton.textContent = "No way";
+      if (!isMobile) {
+        yesButton.style.padding = "3.5rem 7.5rem";
+        yesButton.style.fontSize = "3rem";
+        noButton.style.padding = "0.5rem 1.2rem";
+        noButton.style.fontSize = "0.7rem";
+      } else if (!isSmallMobile) {
+        noButton.style.padding = "0.6rem 1rem";
+        noButton.style.fontSize = "0.7rem";
+      } else {
+        noButton.style.padding = "0.5rem 0.8rem";
+        noButton.style.fontSize = "0.65rem";
+      }
     } else {
       // After 4 "no" clicks - remove the no button
       noButton.style.display = "none";
-      question.textContent = "There's only one option now 😊";
-      yesButton.style.padding = "5rem 8rem";
-      yesButton.style.fontSize = "3.5rem";
+      question.textContent = "Perfect! Only one button left 🥰";
+      if (!isMobile) {
+        yesButton.style.padding = "4rem 9rem";
+        yesButton.style.fontSize = "3.5rem";
+      }
     }
   });
 
